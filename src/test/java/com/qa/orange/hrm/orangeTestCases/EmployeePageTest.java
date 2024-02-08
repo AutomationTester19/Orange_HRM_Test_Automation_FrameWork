@@ -1,5 +1,7 @@
 package com.qa.orange.hrm.orangeTestCases;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -16,4 +18,11 @@ public class EmployeePageTest extends BaseTestSuite{
        Assert.assertEquals(title,"OrangeHRM");
    }
 
+   @Test
+    public void tc_hrm_employee_002(){
+
+	   utils.sleep(2000);
+       WebElement loginBtn = driver().findElement(By.xpath("//button[contains(@class,'orangehrm-login-button')]"));
+       Assert.assertTrue(loginBtn.isDisplayed());
+   }
 }
