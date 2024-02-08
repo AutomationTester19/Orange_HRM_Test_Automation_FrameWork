@@ -23,7 +23,7 @@ pipeline
         }
 stage ('Git Checkout') {
        steps {
-         git branch: 'main', url: 'https://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@github.com/AutomationTester19/Orange_HRM_Test_Automation_FrameWork'
+         git branch: 'main', url: 'https://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@github.com/AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git'
       }
     }
         stage('Regression Automation Tests') {
