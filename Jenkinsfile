@@ -21,6 +21,11 @@ pipeline
                 echo("QA Deployed")
             }
         }
+              stage("Deploy to Stage"){
+                    steps{
+                        echo("Stage Deployed")
+                    }
+                }
 stage ('Git Checkout') {
        steps {
          git branch: 'main', url: 'https://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@github.com/AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git'
@@ -36,21 +41,11 @@ stage ('Git Checkout') {
             }
         }
 
-
-        stage('Publish Allure Reports') {
-           steps {
-                script {
-                    allure([
-                        includeProperties: false,
-                        jdk: '',
-                        properties: [],
-                        reportBuildPolicy: 'ALWAYS',
-                        results: [[path: '/allure-results']]
-                    ])
-                }
+stage("Deploy to PROD"){
+            steps{
+                echo("PROD Deployed")
             }
         }
-
 
         stage('Publish Extent Report'){
             steps{
@@ -64,42 +59,7 @@ stage ('Git Checkout') {
             }
         }
 
-        stage("Deploy to Stage"){
-            steps{
-                echo("Stage Deployed")
-            }
-        }
 
-        stage('Sanity Automation Test') {
-            steps {
-                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git 'https://github.com/AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git'
-                    sh "mvn clean test"
-
-                }
-            }
-        }
-
-
-
-        stage('Publish  Extent Report'){
-            steps{
-                     publishHTML([allowMissing: false,
-                                  alwaysLinkToLastBuild: false,
-                                  keepAll: true,
-                                  reportDir: 'reports',
-                                  reportFiles: 'TestExecutionReport.html',
-                                  reportName: 'HTML Sanity Extent Report',
-                                  reportTitles: ''])
-            }
-        }
-
-
-        stage("Deploy to PROD"){
-            steps{
-                echo("PROD Deployed")
-            }
-        }
 
 
     }
