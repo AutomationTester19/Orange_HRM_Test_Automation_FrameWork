@@ -15,12 +15,6 @@ pipeline
                 echo("Build Deployed")
             }
         }
-
-        stage("Deploy to QA"){
-            steps{
-                echo("QA Deployed")
-            }
-        }
               stage("Deploy to Stage"){
                     steps{
                         echo("Stage Deployed")
@@ -28,13 +22,13 @@ pipeline
                 }
 stage ('Git Checkout') {
        steps {
-         git branch: 'main', url: 'https://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@github.com/AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git'
+         git branch: 'main', url: 'https://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@github.com/AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git'
       }
     }
         stage('Regression Automation Tests') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git 'https://github.com/AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git'
+                    git 'https://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@github.com/AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git'
                     sh "mvn clean test"
 
                 }
