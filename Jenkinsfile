@@ -21,7 +21,11 @@ pipeline
                 echo("QA Deployed")
             }
         }
-
+stage ('Git Checkout') {
+       steps {
+         git branch: 'main', url: 'https://github.com/AutomationTester19/Orange_HRM_Test_Automation_FrameWork'
+      }
+    }
         stage('Regression Automation Tests') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
