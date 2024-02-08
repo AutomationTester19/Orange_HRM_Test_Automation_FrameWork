@@ -26,7 +26,7 @@ pipeline
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     git 'https://github.com/AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git'
-                    zsh "mvn clean test"
+                    sh "mvn clean test"
 
                 }
             }
@@ -70,7 +70,7 @@ pipeline
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     git 'https://github.com/AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git'
-                    zsh "mvn clean test"
+                    sh "mvn clean test"
 
                 }
             }
