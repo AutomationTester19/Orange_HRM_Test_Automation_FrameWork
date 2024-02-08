@@ -28,7 +28,7 @@ stage ('Git Checkout') {
         stage('Regression Automation Tests') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git 'https://github.com/AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git'
+                    git 'https://github.com/AutomationTester19/Orange_HRM_Test_Automation_FrameWork'
                     sh "mvn clean test"
 
                 }
