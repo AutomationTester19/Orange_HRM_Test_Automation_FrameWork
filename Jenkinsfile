@@ -20,14 +20,7 @@ pipeline
                         echo("Stage Deployed")
                     }
                 }
-stage('Git Checkout') {
-            steps {
-                script {
-                    git branch: "${BRANCH_NAME}",
-                        url: 'git@github.com:AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git'
-                }
-            }
-        }
+
         stage('Regression Automation Tests') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
