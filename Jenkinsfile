@@ -20,7 +20,7 @@ pipeline
                         echo("Stage Deployed")
                     }
                 }
-                checkout([
+         checkout([
                 $class: 'GitSCM', branches: [[name: '*/main']],
                 userRemoteConfigs: [[url: 'git@github.com:AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git',credentialsId: 'CI_CD']]
                 ])
