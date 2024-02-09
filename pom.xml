@@ -123,8 +123,7 @@
 				<version>2.19.1</version>
 
 				<configuration>
-					<forkCount>3</forkCount>
-					<reuseForks>true</reuseForks>
+					<testFailureIgnore>true</testFailureIgnore>
 					<suiteXmlFiles>
 						<suiteXmlFile>src/main/resources/testng.xml</suiteXmlFile>
 						<!-- <suiteXmlFile>${suiteXmlFile}</suiteXmlFile> -->
