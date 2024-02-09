@@ -95,5 +95,6 @@ public class DriverManager {
 	public static void launchApp(){
 
 		driver().get(getInputProperty("url"));
+  	    utils.sleep(1000);
 	}
 }

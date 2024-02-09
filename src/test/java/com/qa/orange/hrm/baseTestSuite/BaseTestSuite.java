@@ -18,6 +18,7 @@ public class BaseTestSuite extends DriverManager {
          deleteAllCookies();
          maximizeWindow();
          launchApp();
+
      }
 
 	@AfterMethod
