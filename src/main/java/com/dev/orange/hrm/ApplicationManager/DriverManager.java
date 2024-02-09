@@ -5,6 +5,7 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 
 import com.dev.orange.hrm.Utilities.Log;
@@ -21,6 +22,7 @@ public class DriverManager {
 	public static FileInputStream inputStream = null;
 
 	public static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
+	public static ChromeOptions options = new ChromeOptions();
 
 	protected static PropertyManager property = null;
 	protected static BasePage basePage = null;
@@ -79,6 +81,7 @@ public class DriverManager {
 
 		case "chrome":
 			driver.set(new ChromeDriver());
+			options.addArguments("--disable-dev-shm-usage");
 			break;
 		case "edge":
 			driver.set(new EdgeDriver());
