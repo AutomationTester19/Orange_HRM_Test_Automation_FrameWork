@@ -22,10 +22,7 @@ pipeline
                 }
          stage("Git Checkout"){
          steps{
-         checkout([
-                $class: 'GitSCM', branches: [[name: '*/main']],
-                userRemoteConfigs: [[url: 'git@github.com:AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git'],[credentialsId: 'Access Token']]
-                ])
+         checkout scmGit(branches: [[name: '*/main']], browser: github('https://github.com/AutomationTester19/Orange_HRM_Test_Automation_FrameWork'), extensions: [cloneOption(honorRefspec: true, noTags: true, reference: '', shallow: false), lfs(), localBranch('main')], userRemoteConfigs: [[credentialsId: 'Access Token', url: 'git@github.com:AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git']])
 }
 }
         stage('Regression Automation Tests') {
