@@ -15,6 +15,8 @@ import com.dev.orange.hrm.Utilities.Utils;
 import com.dev.orange.hrm.pageObjects.BasePage;
 import com.dev.orange.hrm.pageObjects.DashBoardPage;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class DriverManager {
 
 	
@@ -37,6 +39,7 @@ public class DriverManager {
 		String browserName = factoryManager.getInputProperty("browser");
 		switch (browserName) {
 		case "chrome":
+			WebDriverManager.chromedriver().clearDriverCache().setup();
 			driver.set(new ChromeDriver(factoryManager.getChromeOptions()));
 			break;
 		case "edge":
@@ -75,7 +78,7 @@ public class DriverManager {
 	public static void launchApp() {
 		
 		driver().get(factoryManager.getInputProperty("url"));
-		utils.sleep(1000);
+		utils.sleep(2000);
 	}
 
 	public static void pageObjectInitialization() {
