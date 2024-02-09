@@ -20,15 +20,8 @@ pipeline
                         echo("Stage Deployed")
                     }
                 }
-         stage("Git Checkout"){
-         steps{
-         checkout([
-                      scmGit(branches: [[name: 'main']], browser: github('https://github.com/AutomationTester19/Orange_HRM_Test_Automation_FrameWork'),
-                       extensions: [cloneOption(honorRefspec: true, noTags: true, reference: '', shallow: false), lfs()],
-                       userRemoteConfigs: [[credentialsId: 'Access Token', url: 'git@github.com:AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git']])
-                      ])
-}
-}
+
+       
         stage('Regression Automation Tests') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
