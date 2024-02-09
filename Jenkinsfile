@@ -22,7 +22,6 @@ pipeline
                 }
  properties([parameters([choice(choices: ['main', 'temp'], description: 'Select desired branch to build', name: 'branches')])])
 
-node{
 stage ('Git Checkout') {
        steps {
        echo "checking out from branch ${params.branches}"
@@ -38,7 +37,7 @@ stage ('Git Checkout') {
 
                 }
             }
-        }
+  
 
 stage("Deploy to PROD"){
             steps{
