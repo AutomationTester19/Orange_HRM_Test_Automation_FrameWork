@@ -3,7 +3,7 @@ pipeline
     agent any
 
     tools{
-        maven 'maven'
+        maven 'mvn'
         }
 
     stages
@@ -24,15 +24,15 @@ stage('Git Checkout') {
             steps {
                 script {
                     git branch: 'main',
-                        url: 'https://github.com/AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git'
+                        url: 'git@github.com:AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git'
                 }
             }
         }
         stage('Regression Automation Tests') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git 'https://github.com/AutomationTester19/Orange_HRM_Test_Automation_FrameWork'
-                    sh " clean test"
+                    git 'git@github.com:AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git'
+                    sh "clean test"
 
                 }
             }
