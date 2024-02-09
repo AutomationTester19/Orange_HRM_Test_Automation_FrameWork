@@ -24,7 +24,7 @@ pipeline
          steps{
          checkout([
                 $class: 'GitSCM', branches: [[name: '*/main']],
-                userRemoteConfigs: [[url: 'git@github.com:AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git'],[credentialsId: 'Token']]
+                userRemoteConfigs: [[url: 'git@github.com:AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git'],[credentialsId: 'Access Token']]
                 ])
 }
 }
