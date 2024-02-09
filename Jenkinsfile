@@ -20,9 +20,10 @@ pipeline
                         echo("Stage Deployed")
                     }
                 }
-                checkout([$class: 'GitSCM', branches: [[name: 'main']],
-                doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [],
-                userRemoteConfigs: [[credentialsId: 'CI_CD', url: 'git@github.com:AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git']]])
+                checkout([
+                $class: 'GitSCM', branches: [[name: '*/main']],
+                userRemoteConfigs: [[url: 'git@github.com:AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git',credentialsId: 'CI_CD']]
+                ])
 
 
         stage('Regression Automation Tests') {
