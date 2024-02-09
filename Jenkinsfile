@@ -21,12 +21,13 @@ pipeline
                     }
                 }
          stage("Git Checkout"){
+         steps{
          checkout([
                 $class: 'GitSCM', branches: [[name: '*/main']],
                 userRemoteConfigs: [[url: 'git@github.com:AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git'],[credentialsId: 'CI_CD']]
                 ])
 }
-
+}
         stage('Regression Automation Tests') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
