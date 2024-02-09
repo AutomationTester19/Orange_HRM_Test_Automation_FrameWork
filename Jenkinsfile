@@ -20,11 +20,16 @@ pipeline
                         echo("Stage Deployed")
                     }
                 }
+ properties([parameters([choice(choices: ['main', 'temp'], description: 'Select desired branch to build', name: 'branches')])])
+
+node{
 stage ('Git Checkout') {
        steps {
-         git branch: 'main', url: 'https://github.com/AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git'
+       echo "checking out from branch ${params.branches}"
+         git  url: 'https://github.com/AutomationTester19/Orange_HRM_Test_Automation_FrameWork',branch:"${params.branches}"
       }
     }
+   }
         stage('Regression Automation Tests') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
