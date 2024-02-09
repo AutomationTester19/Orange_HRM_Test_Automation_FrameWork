@@ -23,7 +23,7 @@ pipeline
 stage('Git Checkout') {
             steps {
                 script {
-                    git branch: 'main',
+                    git branch: "${BRANCH_NAME}",
                         url: 'git@github.com:AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git'
                 }
             }
