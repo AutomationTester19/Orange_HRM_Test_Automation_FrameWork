@@ -14,10 +14,10 @@ public class BaseTestSuite extends DriverManager {
         /* if(browserName!=null){
              prop.setProperty("browser",browserName);
          }*/
-         openBrowser(getInputProperty("browser"));
-         deleteAllCookies();
-         maximizeWindow();
-         launchApp();
+        openBrowser();
+        deleteAllCookies();
+        maximizeWindow();
+        launchApp();
 
      }
 
