@@ -5,6 +5,8 @@
 	<listeners>
 		<listener
 			class-name="com.dev.orange.hrm.Listeners.AllureTestListeners" />
+		<listener
+			class-name="com.dev.orange.hrm.Listeners.ExtentReportListeners" />
 	</listeners>
 
   <test name="Orange HRM Test Automation">

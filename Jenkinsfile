@@ -22,22 +22,28 @@ pipeline {
             stage('Automation Test Suite'){
             steps{
             git 'https://github.com/AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git'
-            sh "mvn clean test"
+            sh "mvn -D clean test"
             }
 }
 
-stage('Publish Allure Reports') {
-           steps {
-                script {
-                    allure([
-                        includeProperties: false,
-                        jdk: '',
-                        properties: [],
-                        reportBuildPolicy: 'ALWAYS',
-                        results: [[path: '/allure-results']]
-                    ])
-                }
+stage('Publish  Extent Report'){
+            steps{
+                     publishHTML([allowMissing: false,
+                                  alwaysLinkToLastBuild: false, 
+                                  keepAll: true, 
+                                  reportDir: 'Build',
+                                  reportFiles: 'OrangeHRMExtentReport.html', 
+                                  reportName: 'HTML Extent Report', 
+                                  reportTitles: ''])
             }
         }
+        
+        
+        stage("Deploy to PROD"){
+            steps{
+                echo("deploy to PROD")
+            }
+        }
+        }
        }
-      }
+    
