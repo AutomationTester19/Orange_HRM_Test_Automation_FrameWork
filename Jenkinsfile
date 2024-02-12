@@ -19,14 +19,24 @@ pipeline {
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"
             }
 
-            post {
-                // If Maven was able to run the tests, even if some of the test
-                // failed, record the test results and archive the jar file.
-                success {
-                    junit '**/target/surefire-reports/TEST-*.xml'
-                    archiveArtifacts 'target/*.jar'
-                }
+            stage('Automation Test Suite'){
+            steps{
+            git 'https://github.com/AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git'
+            sh "mvn -Dmaven.test.failure.ignore=true clean package"
             }
+            }
+
+           stage('Publish Extent Report'){
+                       steps{
+                                publishHTML([allowMissing: false,
+                                             alwaysLinkToLastBuild: false,
+                                             keepAll: true,
+                                             reportDir: 'build',
+                                             reportFiles: 'OrangeHRMTestAutomationReport.html',
+                                             reportName: 'Orange HRM Test Automation Report',
+                                             reportTitles: ''])
+                       }
+                   }
         }
     }
 }
