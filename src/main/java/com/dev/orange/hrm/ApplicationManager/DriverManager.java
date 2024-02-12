@@ -39,9 +39,11 @@ public class DriverManager {
 		String browserName = factoryManager.getInputProperty("browser");
 		switch (browserName) {
 		case "chrome":
+			WebDriverManager.chromedriver().clearDriverCache().setup();
 			driver.set(new ChromeDriver(factoryManager.getChromeOptions()));
 			break;
 		case "edge":
+			WebDriverManager.edgedriver().clearDriverCache().setup();
 			driver.set(new EdgeDriver(factoryManager.getEdgeOptions()));		
 			break;
 		default:
