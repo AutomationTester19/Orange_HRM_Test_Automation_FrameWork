@@ -18,14 +18,13 @@ pipeline {
                 // To run Maven on a Windows agent, use
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"
             }
-
+}
             stage('Automation Test Suite'){
             steps{
             git 'https://github.com/AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git'
             sh "mvn -Dmaven.test.failure.ignore=true clean package"
             }
-            }
-
+}
            stage('Publish Extent Report'){
                        steps{
                                 publishHTML([allowMissing: false,
@@ -38,5 +37,3 @@ pipeline {
                        }
                    }
         }
-    }
-}
