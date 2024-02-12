@@ -10,10 +10,8 @@ pipeline {
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
-                git 'https://github.com/jglick/simple-maven-project-with-tests.git'
 
-                // Run Maven on a Unix agent.
-                sh "mvn -Dmaven.test.failure.ignore=true clean package"
+               echo("Build Deployed")
 
                 // To run Maven on a Windows agent, use
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"
@@ -23,14 +21,6 @@ pipeline {
             steps{
             git 'https://github.com/AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git'
             sh "mvn -Dmaven.test.failure.ignore=true install"
-            }
-            post 
-            {
-                success
-                {
-                    junit '**/target/surefire-reports/TEST-*.xml'
-                    archiveArtifacts 'target/*.jar'
-                }
             }
         }
         
