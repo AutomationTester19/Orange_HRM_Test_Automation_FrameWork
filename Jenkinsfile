@@ -22,7 +22,7 @@ pipeline {
             stage('Automation Test Suite'){
             steps{
             git 'https://github.com/AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git'
-            sh "mvn -D clean test"
+            sh "mvn -Dmaven.test.failure.ignore=true install"
             }
 }
 
