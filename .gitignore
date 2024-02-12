@@ -1,5 +1,10 @@
 # Orange_HRM_Test_Automation_FrameWork
-
+allure-results/
+screenshots/
+screenshot/
+test-output/
+Reports/
+logs/
 
 opencart.log
 ##############################
