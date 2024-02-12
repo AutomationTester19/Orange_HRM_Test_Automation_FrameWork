@@ -64,6 +64,8 @@ public class FactoryManager {
 			chromeOptions.setCapability("selenoid:options", selenoidOptions);
 
 		}
+		
+		chromeOptions.addArguments("--remote-allow-origins=*");
 
 		return chromeOptions;
 	}
