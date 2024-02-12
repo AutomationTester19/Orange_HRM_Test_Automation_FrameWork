@@ -12,7 +12,7 @@ pipeline {
                 // Get some code from a GitHub repository
                  steps
                  {
-                             git 'https://github.com/AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git'
+                             git branch:main, url:'https://github.com/AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git'
                              sh "mvn clean test -Dsuite=src/main/resources/testng.xml"
                  }
                 // To run Maven on a Windows agent, use
