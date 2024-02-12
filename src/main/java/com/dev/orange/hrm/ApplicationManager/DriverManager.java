@@ -43,7 +43,8 @@ public class DriverManager {
 			driver.set(new ChromeDriver(factoryManager.getChromeOptions()));
 			break;
 		case "edge":
-			driver.set(new EdgeDriver(factoryManager.getEdgeOptions()));
+			WebDriverManager.edgedriver().clearDriverCache().setup();
+			driver.set(new EdgeDriver(factoryManager.getEdgeOptions()));		
 			break;
 		default:
 			break;
@@ -52,8 +53,6 @@ public class DriverManager {
 
 	public static void openBrowser() {
 		
-		System.out.println("");
-
 		if (System.getProperty("remote") != null) {
 			// launch remote
 		} else

@@ -11,7 +11,7 @@ pipeline {
         steps{
                  catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                              git branch:'main', url:'https://github.com/AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git'
-                             sh "mvn clean test -Dsuite=src/main/resources/testng.xml"
+                             sh 'mvn clean test -Dsuite=src/main/resources/testng.xml'
                  }
                 }
             }
