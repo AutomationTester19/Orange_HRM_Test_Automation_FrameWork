@@ -24,21 +24,15 @@ pipeline {
             git 'https://github.com/AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git'
             sh "mvn -Dmaven.test.failure.ignore=true install"
             }
-}
-
-stage('Publish  Extent Report'){
-            steps{
-                     publishHTML([
-                                  allowMissing: false,
-                                  alwaysLinkToLastBuild: true, 
-                                  keepAll: false, 
-                                  reportDir: 'Build/',
-                                  reportFiles: 'OrangeHRMExtentReport.html', 
-                                  reportName: 'HTML Extent Report', 
-                                  reportTitles: ''])
+            post 
+            {
+                success
+                {
+                    junit '**/target/surefire-reports/TEST-*.xml'
+                    archiveArtifacts 'target/*.jar'
+                }
             }
         }
-        
         
         stage("Deploy to PROD"){
             steps{
