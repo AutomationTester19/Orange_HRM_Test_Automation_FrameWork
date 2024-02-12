@@ -8,17 +8,31 @@ pipeline {
 
     stages {
         stage('Build And Run') {
-
-                // Get some code from a GitHub repository
-                 steps
-                 {
+        steps{
+                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                              git branch:'main', url:'https://github.com/AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git'
                              sh "mvn clean test -Dsuite=src/main/resources/testng.xml"
                  }
-                // To run Maven on a Windows agent, use
-                // bat "mvn -Dmaven.test.failure.ignore=true clean package"
+                }
+                post{
+                    
+                    success {
+                        
+                       publishHTML
+                        ([ 
+                                  allowMissing: false,
+                                  alwaysLinkToLastBuild: false, 
+                                  keepAll: true, 
+                                  reportDir: 'Build', 
+                                  reportFiles: 'OrangeHRMTestAutomationReport.html', 
+                                  reportName: 'Orange HRM Test Automation Report', 
+                                  reportTitles: 'Orange HRM Test Automation Extent Report'
+                        ])
+                    }
 
-}
+                }
+
+            }
 
         stage("Deploy to PROD"){
             steps{
