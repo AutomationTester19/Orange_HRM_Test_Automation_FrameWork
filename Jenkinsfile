@@ -7,28 +7,24 @@ pipeline {
     }
 
     stages {
-        stage('Build') {
-            steps {
+        stage('Build And Run') {
+
                 // Get some code from a GitHub repository
-
-               echo("Build Deployed")
-
+                 steps
+                 {
+                             git 'https://github.com/AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git'
+                             sh "mvn -Dmaven.test.failure.ignore=true install"
+                 }
                 // To run Maven on a Windows agent, use
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"
-            }
+
 }
-            stage('Orange HRM Regression Test Suite'){
-            steps{
-            git 'https://github.com/AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git'
-            sh "mvn -Dmaven.test.failure.ignore=true install"
-            }
-        }
-        
+
         stage("Deploy to PROD"){
             steps{
                 echo("deploy to PROD")
             }
         }
-        }
-       }
+    }
+}
     
