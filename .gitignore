@@ -3,6 +3,7 @@ allure-results/
 screenshots/
 screenshot/
 test-output/
+target/
 Reports/
 logs/
 Build/
