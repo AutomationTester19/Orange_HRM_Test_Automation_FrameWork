@@ -14,25 +14,22 @@ pipeline {
                              sh "mvn clean test -Dsuite=src/main/resources/testng.xml"
                  }
                 }
-                post{
+            }
+                stage('Extent Report'){
                     
-                    success {
+                    steps {
                         
-                       publishHTML
-                        ([ 
+                       publishHTML([ 
                                   allowMissing: false,
                                   alwaysLinkToLastBuild: false, 
                                   keepAll: true, 
                                   reportDir: 'Build', 
-                                  reportFiles: 'OrangeHRMTestAutomationReport.html', 
+                                  reportFiles: 'OrangeHRMExtentReport.html', 
                                   reportName: 'Orange HRM Test Automation Report', 
-                                  reportTitles: 'Orange HRM Test Automation Extent Report'
-                        ])
+                                  reportTitles: ''])
                     }
 
                 }
-
-            }
 
         stage("Deploy to PROD"){
             steps{
