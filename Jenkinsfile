@@ -28,10 +28,11 @@ pipeline {
 
 stage('Publish  Extent Report'){
             steps{
-                     publishHTML([allowMissing: false,
-                                  alwaysLinkToLastBuild: false, 
-                                  keepAll: true, 
-                                  reportDir: 'Build',
+                     publishHTML([
+                                  allowMissing: false,
+                                  alwaysLinkToLastBuild: true, 
+                                  keepAll: false, 
+                                  reportDir: 'Build/',
                                   reportFiles: 'OrangeHRMExtentReport.html', 
                                   reportName: 'HTML Extent Report', 
                                   reportTitles: ''])
