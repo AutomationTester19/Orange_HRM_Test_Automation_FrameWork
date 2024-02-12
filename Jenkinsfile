@@ -17,7 +17,7 @@ pipeline {
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"
             }
 }
-            stage('Automation Test Suite'){
+            stage('Orange HRM Regression Test Suite'){
             steps{
             git 'https://github.com/AutomationTester19/Orange_HRM_Test_Automation_FrameWork.git'
             sh "mvn -Dmaven.test.failure.ignore=true install"
