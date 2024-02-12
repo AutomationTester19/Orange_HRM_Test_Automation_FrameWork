@@ -67,9 +67,9 @@ public class FactoryManager {
 		
 		chromeOptions.addArguments("--remote-allow-origins=*");
 		chromeOptions.setCapability("browserVersion", "121.0.6167.85");
-		options.addArguments("--no-sandbox");
-		options.addArguments("--disable-dev-shm-usage");
-		options.addArguments("--headless");
+		chromeOptions.addArguments("--no-sandbox");
+		chromeOptions.addArguments("--disable-dev-shm-usage");
+		chromeOptions.addArguments("--headless");
 
 		return chromeOptions;
 	}
