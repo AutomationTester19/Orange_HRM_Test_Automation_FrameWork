@@ -66,7 +66,7 @@ public class FactoryManager {
 		}
 		
 		chromeOptions.addArguments("--remote-allow-origins=*");
-		chromeOptions.setCapability("browserVersion", "116.0.5845.111");
+		chromeOptions.setCapability("browserVersion", "121.0.6167.85");
 
 		return chromeOptions;
 	}
