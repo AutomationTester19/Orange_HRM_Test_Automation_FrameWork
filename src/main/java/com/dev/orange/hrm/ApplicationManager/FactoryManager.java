@@ -69,7 +69,6 @@ public class FactoryManager {
 		chromeOptions.setCapability("browserVersion", "121.0.6167.85");
 		chromeOptions.addArguments("--no-sandbox");
 		chromeOptions.addArguments("--disable-dev-shm-usage");
-		chromeOptions.addArguments("--headless");
 
 		return chromeOptions;
 	}
