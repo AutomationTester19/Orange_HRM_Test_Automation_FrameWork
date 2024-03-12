@@ -2,36 +2,54 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-12T11:34:26 IST" name="Orange Test Automation Suite" finished-at="2024-02-12T11:35:52 IST" duration-ms="85467">
+  <suite started-at="2024-02-15T15:10:09 IST" name="Orange Test Automation Suite" finished-at="2024-02-15T15:11:06 IST" duration-ms="56962">
     <groups>
     </groups>
-    <test started-at="2024-02-12T11:34:26 IST" name="Orange HRM Test Automation" finished-at="2024-02-12T11:35:52 IST" duration-ms="85467">
+    <test started-at="2024-02-15T15:10:09 IST" name="Orange HRM Test Automation Chrome" finished-at="2024-02-15T15:10:40 IST" duration-ms="30341">
       <class name="com.qa.orange.hrm.orangeTestCases.EmployeePageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.qa.orange.hrm.orangeTestCases.EmployeePageTest@1f51431]" started-at="2024-02-12T11:34:26 IST" name="setUp" finished-at="2024-02-12T11:35:12 IST" duration-ms="45989" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:com.qa.orange.hrm.orangeTestCases.EmployeePageTest@4dde8976]" started-at="2024-02-15T15:10:09 IST" name="setUp" finished-at="2024-02-15T15:10:38 IST" duration-ms="28661" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="tc_hrm_employee_001()[pri:0, instance:com.qa.orange.hrm.orangeTestCases.EmployeePageTest@1f51431]" started-at="2024-02-12T11:35:12 IST" name="tc_hrm_employee_001" finished-at="2024-02-12T11:35:16 IST" duration-ms="3455" status="PASS">
+        <test-method signature="tc_hrm_employee_001()[pri:0, instance:com.qa.orange.hrm.orangeTestCases.EmployeePageTest@4dde8976]" started-at="2024-02-15T15:10:38 IST" name="tc_hrm_employee_001" finished-at="2024-02-15T15:10:39 IST" duration-ms="1255" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc_hrm_employee_001 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.orange.hrm.orangeTestCases.EmployeePageTest@1f51431]" started-at="2024-02-12T11:35:16 IST" name="tearDown" finished-at="2024-02-12T11:35:16 IST" duration-ms="112" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.qa.orange.hrm.orangeTestCases.EmployeePageTest@1f51431]" started-at="2024-02-12T11:35:16 IST" name="setUp" finished-at="2024-02-12T11:35:47 IST" duration-ms="30960" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="tc_hrm_employee_002()[pri:0, instance:com.qa.orange.hrm.orangeTestCases.EmployeePageTest@1f51431]" started-at="2024-02-12T11:35:47 IST" name="tc_hrm_employee_002" finished-at="2024-02-12T11:35:52 IST" duration-ms="4596" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc_hrm_employee_002 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.orange.hrm.orangeTestCases.EmployeePageTest@1f51431]" started-at="2024-02-12T11:35:52 IST" name="tearDown" finished-at="2024-02-12T11:35:52 IST" duration-ms="110" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.orange.hrm.orangeTestCases.EmployeePageTest@4dde8976]" started-at="2024-02-15T15:10:39 IST" name="tearDown" finished-at="2024-02-15T15:10:40 IST" duration-ms="154" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.qa.orange.hrm.orangeTestCases.EmployeePageTest -->
-    </test> <!-- Orange HRM Test Automation -->
+    </test> <!-- Orange HRM Test Automation Chrome -->
+    <test started-at="2024-02-15T15:10:40 IST" name="Orange HRM Test Automation Edge" finished-at="2024-02-15T15:11:06 IST" duration-ms="25904">
+      <class name="com.qa.orange.hrm.orangeTestCases.EmployeePageTest">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:com.qa.orange.hrm.orangeTestCases.EmployeePageTest@7f9e8421]" started-at="2024-02-15T15:10:40 IST" name="setUp" finished-at="2024-02-15T15:11:05 IST" duration-ms="24344" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="tc_hrm_employee_001()[pri:0, instance:com.qa.orange.hrm.orangeTestCases.EmployeePageTest@7f9e8421]" started-at="2024-02-15T15:11:05 IST" name="tc_hrm_employee_001" finished-at="2024-02-15T15:11:06 IST" duration-ms="1393" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc_hrm_employee_001 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.orange.hrm.orangeTestCases.EmployeePageTest@7f9e8421]" started-at="2024-02-15T15:11:06 IST" name="tearDown" finished-at="2024-02-15T15:11:06 IST" duration-ms="148" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.qa.orange.hrm.orangeTestCases.EmployeePageTest -->
+    </test> <!-- Orange HRM Test Automation Edge -->
   </suite> <!-- Orange Test Automation Suite -->
 </testng-results>

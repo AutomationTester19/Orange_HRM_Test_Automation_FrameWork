@@ -126,6 +126,8 @@
 				<version>2.19.1</version>
 
 				<configuration>
+					<parallel>classes</parallel>
+					<threadCount>4</threadCount>
 					<testFailureIgnore>true</testFailureIgnore>
 					<suiteXmlFiles>
 						<suiteXmlFile>src/main/resources/testng.xml</suiteXmlFile>

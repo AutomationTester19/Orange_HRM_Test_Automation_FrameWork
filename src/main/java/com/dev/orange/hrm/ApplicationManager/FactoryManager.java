@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
+import org.aspectj.weaver.ast.Or;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeOptions;
@@ -23,7 +24,7 @@ public class FactoryManager {
 	   public static String defaultPropertyFilePath = System.getProperty("user.dir");
 	   public static String propertyFilePath = defaultPropertyFilePath+ "//src//main//resources//application.properties";
 
-	public static Properties readPropertyFile() {
+	public Properties readPropertyFile() {
 
 		prop = new Properties();
 		try {
@@ -48,12 +49,10 @@ public class FactoryManager {
 	public ChromeOptions getChromeOptions() {
 
 		chromeOptions = new ChromeOptions();
-		if (Boolean.parseBoolean(getInputProperty("headless").trim()))
-			chromeOptions.addArguments("--headless");
-		if (Boolean.parseBoolean(getInputProperty("incognito").trim()))
-			chromeOptions.addArguments("--incognito");
-
-		if (Boolean.parseBoolean(getInputProperty("remote"))) {
+		chromeOptions.setCapability("browserVersion", "121.0.6167.85");
+		chromeOptions.addArguments("--no-sandbox");
+		chromeOptions.addArguments("--disable-dev-shm-usage");
+	/*	if (Boolean.parseBoolean(getInputProperty("remote"))) {
 			chromeOptions.setCapability("browserName", "chrome");
 			chromeOptions.setBrowserVersion(getInputProperty("browserversion").trim());
 
@@ -64,13 +63,11 @@ public class FactoryManager {
 			chromeOptions.setCapability("selenoid:options", selenoidOptions);
 
 		}
-		
-		chromeOptions.addArguments("--remote-allow-origins=*");
-		chromeOptions.setCapability("browserVersion", "121.0.6167.85");
-		chromeOptions.addArguments("--no-sandbox");
-		chromeOptions.addArguments("--disable-dev-shm-usage");
-		chromeOptions.addArguments("--headless");
 
+		chromeOptions.addArguments("--remote-allow-origins=*");
+
+		chromeOptions.addArguments("--headless");
+     */
 		return chromeOptions;
 	}
 
@@ -98,12 +95,13 @@ public class FactoryManager {
 
 	public EdgeOptions getEdgeOptions() {
 		edgeOptions = new EdgeOptions();
-		edgeOptions.setCapability("platform", Platform.LINUX);
-		if (Boolean.parseBoolean(getInputProperty("headless").trim()))
-			edgeOptions.addArguments("--headless");
-		if (Boolean.parseBoolean(getInputProperty("incognito").trim()))
-			edgeOptions.addArguments("--inPrivate");
 		return edgeOptions;
+	}
+
+	public String setProperty(String input, String OriginalValue){
+
+		prop = readPropertyFile();
+		return (String) prop.setProperty(input, OriginalValue);
 	}
 
 }

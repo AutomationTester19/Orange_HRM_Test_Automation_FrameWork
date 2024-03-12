@@ -1,37 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-12T12:50:29 IST" name="Orange Test Automation Suite" finished-at="2024-02-12T12:50:49 IST" duration-ms="20717">
+  <suite started-at="2024-02-15T17:14:56 IST" name="Orange Test Automation Suite" finished-at="2024-02-15T17:14:56 IST" duration-ms="289">
     <groups>
     </groups>
-    <test started-at="2024-02-12T12:50:29 IST" name="Orange HRM Test Automation" finished-at="2024-02-12T12:50:49 IST" duration-ms="20717">
+    <test started-at="2024-02-15T17:14:56 IST" name="Orange HRM Test Automation Chrome" finished-at="2024-02-15T17:14:56 IST" duration-ms="289">
       <class name="com.qa.orange.hrm.orangeTestCases.EmployeePageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.qa.orange.hrm.orangeTestCases.EmployeePageTest@2da3b078]" started-at="2024-02-12T12:50:29 IST" name="setUp" finished-at="2024-02-12T12:50:39 IST" duration-ms="10915" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:com.qa.orange.hrm.orangeTestCases.EmployeePageTest@7b4a0aef]" started-at="2024-02-15T17:14:56 IST" name="setUp" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1707997496151" status="FAIL">
+          <exception class="org.testng.TestNGException">
+            <message>
+              <![CDATA[
+Can inject only one of <ITestContext, XmlTest, Method, Object[], ITestResult> into a @BeforeMethod annotated setUp.
+For more information on native dependency injection please refer to http://testng.org/doc/documentation-main.html#native-dependency-injection]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.TestNGException: 
+Can inject only one of <ITestContext, XmlTest, Method, Object[], ITestResult> into a @BeforeMethod annotated setUp.
+For more information on native dependency injection please refer to http://testng.org/doc/documentation-main.html#native-dependency-injection
+at org.testng.internal.Parameters.checkParameterTypes(Parameters.java:441)
+at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:355)
+at org.testng.internal.Parameters.createParameters(Parameters.java:712)
+at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:166)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:283)
+at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:695)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:523)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.TestNGException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="tc_hrm_employee_001()[pri:0, instance:com.qa.orange.hrm.orangeTestCases.EmployeePageTest@2da3b078]" started-at="2024-02-12T12:50:40 IST" name="tc_hrm_employee_001" finished-at="2024-02-12T12:50:40 IST" duration-ms="22" status="PASS">
+        <test-method signature="tc_hrm_employee_001()[pri:0, instance:com.qa.orange.hrm.orangeTestCases.EmployeePageTest@7b4a0aef]" started-at="2024-02-15T17:14:56 IST" name="tc_hrm_employee_001" finished-at="2024-02-15T17:14:56 IST" duration-ms="0" status="SKIP">
+          <exception class="org.testng.TestNGException">
+            <message>
+              <![CDATA[
+Can inject only one of <ITestContext, XmlTest, Method, Object[], ITestResult> into a @BeforeMethod annotated setUp.
+For more information on native dependency injection please refer to http://testng.org/doc/documentation-main.html#native-dependency-injection]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.TestNGException: 
+Can inject only one of <ITestContext, XmlTest, Method, Object[], ITestResult> into a @BeforeMethod annotated setUp.
+For more information on native dependency injection please refer to http://testng.org/doc/documentation-main.html#native-dependency-injection
+at org.testng.internal.Parameters.checkParameterTypes(Parameters.java:441)
+at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:355)
+at org.testng.internal.Parameters.createParameters(Parameters.java:712)
+at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:166)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:283)
+at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:695)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:523)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.TestNGException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc_hrm_employee_001 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.orange.hrm.orangeTestCases.EmployeePageTest@2da3b078]" started-at="2024-02-12T12:50:40 IST" name="tearDown" finished-at="2024-02-12T12:50:40 IST" duration-ms="113" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.qa.orange.hrm.orangeTestCases.EmployeePageTest@2da3b078]" started-at="2024-02-12T12:50:40 IST" name="setUp" finished-at="2024-02-12T12:50:49 IST" duration-ms="9400" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="tc_hrm_employee_002()[pri:0, instance:com.qa.orange.hrm.orangeTestCases.EmployeePageTest@2da3b078]" started-at="2024-02-12T12:50:49 IST" name="tc_hrm_employee_002" finished-at="2024-02-12T12:50:49 IST" duration-ms="44" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc_hrm_employee_002 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.orange.hrm.orangeTestCases.EmployeePageTest@2da3b078]" started-at="2024-02-12T12:50:49 IST" name="tearDown" finished-at="2024-02-12T12:50:49 IST" duration-ms="110" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.orange.hrm.orangeTestCases.EmployeePageTest@7b4a0aef]" started-at="2024-02-15T17:14:56 IST" name="tearDown" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1707997496413" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.qa.orange.hrm.orangeTestCases.EmployeePageTest -->
-    </test> <!-- Orange HRM Test Automation -->
+    </test> <!-- Orange HRM Test Automation Chrome -->
   </suite> <!-- Orange Test Automation Suite -->
 </testng-results>

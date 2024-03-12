@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="21.663" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="1.256" tests="3" errors="0" skipped="2" failures="1">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="21.0.2+13-LTS-58"/>
@@ -31,7 +31,6 @@
     <property name="java.class.version" value="65.0"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="maven.test.failure.ignore" value="true"/>
     <property name="os.version" value="14.3"/>
     <property name="library.jansi.path" value="/Applications/apache-maven-3.8.6/lib/jansi-native"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
@@ -43,7 +42,7 @@
     <property name="java.class.path" value="/Applications/apache-maven-3.8.6/boot/plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="21"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.test.failure.ignore=true install"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test"/>
     <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home"/>
     <property name="apple.awt.application.name" value="Launcher"/>
     <property name="user.language" value="en"/>
@@ -61,6 +60,34 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
   </properties>
-  <testcase name="tc_hrm_employee_001" classname="com.qa.orange.hrm.orangeTestCases.EmployeePageTest" time="0.012"/>
-  <testcase name="tc_hrm_employee_002" classname="com.qa.orange.hrm.orangeTestCases.EmployeePageTest" time="0.038"/>
+  <testcase name="setUp" classname="com.qa.orange.hrm.orangeTestCases.EmployeePageTest" time="0.778">
+    <failure message="&#10;Can inject only one of &lt;ITestContext, XmlTest, Method, Object[], ITestResult&gt; into a @BeforeMethod annotated setUp.&#10;For more information on native dependency injection please refer to http://testng.org/doc/documentation-main.html#native-dependency-injection" type="org.testng.TestNGException"><![CDATA[org.testng.TestNGException: 
+
+Can inject only one of <ITestContext, XmlTest, Method, Object[], ITestResult> into a @BeforeMethod annotated setUp.
+For more information on native dependency injection please refer to http://testng.org/doc/documentation-main.html#native-dependency-injection
+]]></failure>
+    <system-out><![CDATA[...
+... TestNG 7.0.1 by CÃ©dric Beust (cedric@beust.com)
+...
+
+Test Suite started!
+I am in onStart method Orange HRM Test Automation Chrome
+]]></system-out>
+    <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+]]></system-err>
+  </testcase>
+  <testcase name="tc_hrm_employee_001" classname="com.qa.orange.hrm.orangeTestCases.EmployeePageTest" time="0">
+    <skipped message="&#10;Can inject only one of &lt;ITestContext, XmlTest, Method, Object[], ITestResult&gt; into a @BeforeMethod annotated setUp.&#10;For more information on native dependency injection please refer to http://testng.org/doc/documentation-main.html#native-dependency-injection"/>
+    <system-out><![CDATA[tc_hrm_employee_001 started!
+I am in onTestStart method tc_hrm_employee_001 start
+]]></system-out>
+  </testcase>
+  <testcase name="tearDown" classname="com.qa.orange.hrm.orangeTestCases.EmployeePageTest" time="0">
+    <skipped/>
+    <system-out><![CDATA[tc_hrm_employee_001 skipped!
+I am in onTestSkipped method tc_hrm_employee_001 skipped
+]]></system-out>
+  </testcase>
 </testsuite>

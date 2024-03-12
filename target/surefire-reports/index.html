@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Orange_Test_Automation_Suite" class="navigator-link">
-              <span class="suite-name border-passed">Orange Test Automation Suite</span>
+              <span class="suite-name border-skipped">Orange Test Automation Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,26 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">1 method,  1 skipped,  </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Orange_Test_Automation_Suite" class="hide-methods passed suite-Orange_Test_Automation_Suite"> (hide)</a> <!-- hide-methods passed suite-Orange_Test_Automation_Suite -->
-                      <a href="#" panel-name="suite-Orange_Test_Automation_Suite" class="show-methods passed suite-Orange_Test_Automation_Suite"> (show)</a> <!-- show-methods passed suite-Orange_Test_Automation_Suite -->
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Orange_Test_Automation_Suite" class="hide-methods skipped suite-Orange_Test_Automation_Suite"> (hide)</a> <!-- hide-methods skipped suite-Orange_Test_Automation_Suite -->
+                      <a href="#" panel-name="suite-Orange_Test_Automation_Suite" class="show-methods skipped suite-Orange_Test_Automation_Suite"> (show)</a> <!-- show-methods skipped suite-Orange_Test_Automation_Suite -->
                     </span>
-                    <div class="method-list-content passed suite-Orange_Test_Automation_Suite">
+                    <div class="method-list-content skipped suite-Orange_Test_Automation_Suite">
                       <span>
-                        <img src="passed.png" width="3%"/>
+                        <img src="skipped.png" width="3%"/>
                         <a href="#" panel-name="suite-Orange_Test_Automation_Suite" title="com.qa.orange.hrm.orangeTestCases.EmployeePageTest" class="method navigator-link" hash-for-method="tc_hrm_employee_001">tc_hrm_employee_001</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Orange_Test_Automation_Suite" title="com.qa.orange.hrm.orangeTestCases.EmployeePageTest" class="method navigator-link" hash-for-method="tc_hrm_employee_002">tc_hrm_employee_002</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content passed suite-Orange_Test_Automation_Suite -->
+                    </div> <!-- method-list-content skipped suite-Orange_Test_Automation_Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -122,9 +117,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Orange_Test_Automation_Suite" class="panel Orange_Test_Automation_Suite">
-          <div class="suite-Orange_Test_Automation_Suite-class-passed">
+          <div class="suite-Orange_Test_Automation_Suite-class-skipped">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="skipped.png"/>
               <span class="class-name">com.qa.orange.hrm.orangeTestCases.EmployeePageTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -133,17 +128,18 @@
                   <a name="tc_hrm_employee_001">
                   </a> <!-- tc_hrm_employee_001 -->
                   <span class="method-name">tc_hrm_employee_001</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="tc_hrm_employee_002">
-                  </a> <!-- tc_hrm_employee_002 -->
-                  <span class="method-name">tc_hrm_employee_002</span>
+                  <div class="stack-trace">org.testng.TestNGException: 
+Can inject only one of &lt;ITestContext, XmlTest, Method, Object[], ITestResult&gt; into a @BeforeMethod annotated setUp.
+For more information on native dependency injection please refer to http://testng.org/doc/documentation-main.html#native-dependency-injection
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 13 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Orange_Test_Automation_Suite-class-passed -->
+          </div> <!-- suite-Orange_Test_Automation_Suite-class-skipped -->
         </div> <!-- panel Orange_Test_Automation_Suite -->
         <div panel-name="test-xml-Orange_Test_Automation_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -153,17 +149,17 @@
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite name=&quot;Orange Test Automation Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
+&lt;suite thread-count=&quot;4&quot; parallel=&quot;classes&quot; name=&quot;Orange Test Automation Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;com.dev.orange.hrm.Listeners.AllureTestListeners&quot;/&gt;
     &lt;listener class-name=&quot;com.dev.orange.hrm.Listeners.ExtentReportListeners&quot;/&gt;
+    &lt;listener class-name=&quot;com.dev.orange.hrm.Listeners.AnnotationTransformer&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Orange HRM Test Automation&quot; verbose=&quot;0&quot;&gt;
+  &lt;test thread-count=&quot;4&quot; parallel=&quot;classes&quot; name=&quot;Orange HRM Test Automation Chrome&quot; verbose=&quot;0&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.qa.orange.hrm.orangeTestCases.EmployeePageTest&quot;/&gt;
-      &lt;class name=&quot;com.qa.orange.hrm.baseTestSuite.BaseTestSuite&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Orange HRM Test Automation --&gt;
+  &lt;/test&gt; &lt;!-- Orange HRM Test Automation Chrome --&gt;
 &lt;/suite&gt; &lt;!-- Orange Test Automation Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -175,7 +171,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Orange HRM Test Automation (2 classes)</span>
+                <span class="test-name">Orange HRM Test Automation Chrome (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -201,20 +197,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'tc_hrm_employee_002')
+data.setCell(0, 1, 'tc_hrm_employee_001')
 data.setCell(0, 2, 'com.qa.orange.hrm.orangeTestCases.EmployeePageTest')
-data.setCell(0, 3, 44);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'tc_hrm_employee_001')
-data.setCell(1, 2, 'com.qa.orange.hrm.orangeTestCases.EmployeePageTest')
-data.setCell(1, 3, 22);
+data.setCell(0, 3, 0);
 window.suiteTableData['Orange_Test_Automation_Suite']= { tableData: data, tableDiv: 'times-div-Orange_Test_Automation_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 66 ms</span>
+              <span class="suite-total-time">Total running time: 0 ms</span>
               <div id="times-div-Orange_Test_Automation_Suite">
               </div> <!-- times-div-Orange_Test_Automation_Suite -->
             </div> <!-- times-div -->
@@ -241,29 +233,13 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
               <div class="chronological-class-name">com.qa.orange.hrm.orangeTestCases.EmployeePageTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">0 ms</span>
-              </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">tc_hrm_employee_001</span>
-                <span class="method-start">10992 ms</span>
+                <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">11022 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">11137 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">tc_hrm_employee_002</span>
-                <span class="method-start">20541 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">20586 ms</span>
+                <span class="method-start">11 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
